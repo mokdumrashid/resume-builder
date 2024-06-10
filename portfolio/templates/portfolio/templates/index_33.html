@@ -1,0 +1,399 @@
+{%load static %}
+<!DOCTYPE html>
+<!-- upto 2 directory depth-->
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Super Folio</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700;800&amp;display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700;800&amp;display=swap" media="print" onload="this.media='all'"/>
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700;800&amp;display=swap"/>
+    </noscript>
+    <link href="../../../static/css/template3/font-awesome/css/all.min.css" rel="stylesheet">
+    <link href="../../../static/css/template3/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../../../static/css/template3/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../static/css/template3/aos.css" rel="stylesheet">    
+    <!--<link href="../../../static/css/template3/main.css" rel="stylesheet"> -->
+    <noscript>
+      <style type="text/css">
+        [data-aos] {
+            opacity: 1 !important;
+            transform: translate(0) scale(1) !important;
+        }
+        html, body {
+          overflow-x: hidden;
+        }
+
+        /**
+        * Enable smooth scrolling on the whole document
+        */
+        html {
+          scroll-behavior: smooth;
+        }
+
+        a.tamplate-button {
+          margin: 20px !important;
+        }
+
+        /**
+        * Disable smooth scrolling when users have prefers-reduced-motion enabled
+        */
+        @media screen and (prefers-reduced-motion: reduce) {
+          html {
+            scroll-behavior: auto;
+          }
+        }
+
+        /**
+        * Add .section to every anchored element for scroll margin
+        */
+        .section {
+          scroll-margin-top: 2rem;
+        }
+
+        /* Header */
+        .site-title {
+          font-size: 1.5rem;
+          font-weight: 700;
+          line-height: 3rem;
+          text-decoration: none;
+        }
+
+        @media (min-width: 48em) {
+          .site-title {
+            float: left;
+          }
+        }
+
+        .nav-link {
+          font-weight: 700;
+          color: rgba(0, 0, 0, 0.8) !important;
+        }
+
+        .social-nav .nav-link {
+          padding: 0 0.5rem;
+          font-size: 1.1rem;
+          line-height: 2.5rem;
+        }
+
+        .nav-link:hover,
+        .nav-link:focus,
+        .active .nav-link {
+          color: rgba(0, 0, 0, 0.6) !important;
+        }
+
+        /* Hero (intro) section */
+        .intro-title {
+          font-weight: 800;
+        }
+
+        @-webkit-keyframes animateWave {
+          0% {
+            transform: scale(1, 0);
+          }
+          100% {
+            transform: scale(1, 1);
+          }
+        }
+
+        @keyframes animateWave {
+          0% {
+            transform: scale(1, 0);
+          }
+          100% {
+            transform: scale(1, 1);
+          }
+        }
+
+        .wave-bg {
+          display: block;
+          height: 220px;
+          width: 100%;
+          min-width: 600px;
+          transform-origin: top;
+          -webkit-animation: animateWave 2000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+                  animation: animateWave 2000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+          background-image: url("../images/wave-bg.svg");
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+
+        img.avatar {
+          border-radius: 30px;
+        }
+
+        /* Masonary grid for portfolio */
+        .grid:after {
+          content: '';
+          display: block;
+          clear: both;
+        }
+
+        /* Grid Item */
+        .grid-sizer,
+        .grid-item {
+          width: 100%;
+        }
+
+        .grid-item {
+          padding-bottom: 12px;
+        }
+
+        @media (min-width: 48em) {
+          .grid-sizer,
+          .grid-item {
+            width: 25%;
+          }
+          .grid-item {
+            float: left;
+            padding: 6px;
+          }
+        }
+
+        .grid-item img {
+          display: block;
+          width: 100%;
+          max-width: 100%;
+        }
+
+        /* Portfolio */
+        .portolio-section .container {
+          padding: 0;
+        }
+
+        .portfolio-item {
+          position: relative;
+          overflow: hidden;
+          text-align: center;
+          margin: 0;
+        }
+
+        .portfolio-item figcaption {
+          position: absolute;
+          top: auto;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          padding: 12px;
+          background: rgba(255, 255, 255, 0.75);
+          transition: transform 0.35s;
+          transform: translate3d(0, 100%, 0);
+        }
+
+        .portfolio-item figcaption h4 {
+          color: #222;
+          font-size: 16px;
+          text-transform: uppercase;
+          font-weight: 700;
+          margin-bottom: 3px;
+        }
+
+        .portfolio-item figcaption p {
+          color: #444;
+          font-size: 14px;
+          font-weight: 600;
+          margin-bottom: 0;
+        }
+
+        .portfolio-item:hover figcaption {
+          transform: translate3d(0, 0, 0);
+        }
+
+        /* Portolio Caption */
+        #bp_container .bp-xc {
+          background: #F6E05E !important;
+        }
+
+        #bp_caption a {
+          text-decoration: none;
+        }
+
+        /* Footer section */
+        footer a:not(.nav-link) {
+          color: inherit;
+          font-weight: 600;
+          text-decoration: none;
+          cursor: pointer;
+        }
+
+        /* Scroll Top */
+        #scrolltop {
+          display: block;
+          visibility: hidden;
+          opacity: 0;
+          transition: visibility 0s, opacity 0.5s ease-in;
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+        }
+
+        #scrolltop .btn {
+          padding: 3px 11px;
+          border-radius: 50%;
+        }
+
+        /* Additional utility styles */
+        .container-narrow {
+          max-width: 1024px;
+          margin: 0 auto;
+        }
+
+        .text-small {
+          font-size: 0.875rem;
+        }
+
+        .text-uppercase {
+          letter-spacing: 0.05em;
+        }
+
+        .hover-effect {
+          transition: transform .18s ease-in-out;
+        }
+
+        .hover-effect:hover {
+          transform: translateY(-2px);
+        }
+
+        .marker {
+          position: relative;
+          display: inline;
+          width: auto;
+        }
+
+        .marker-center {
+          padding-right: 0;
+        }
+
+        .marker:after {
+          content: "";
+          width: 125px;
+          height: 30px;
+          position: absolute;
+          bottom: -25px;
+          right: -30px;
+          background-image: url("../images/marker.svg");
+          background-repeat: no-repeat;
+        }
+
+        .marker-center:after {
+          bottom: -30px;
+          left: 50%;
+          margin-left: -60px;
+        }
+
+        @media (max-width: 575.98px) {
+          .marker {
+            padding-right: 0;
+          }
+          .marker:after {
+            bottom: -30px;
+            left: 50%;
+            margin-left: -60px;
+          }
+        }
+
+        .entry-title a {
+          text-decoration: none;
+        }
+
+      </style>
+    </noscript>
+  </head>
+  <body id="top">
+    <div class="page-content">
+      <div id="content">
+<header>
+  <div class="cover bg-light">
+    <div class="container px-3">
+      <div class="row">
+        <div class="col-lg-6 p-2"><img class="img-fluid" src="{%static 'images/template3/illustrations/hello3.svg' %}" alt="hello"/></div>
+        <div class="col-lg-6">
+          <div class="mt-5">
+            <p class="lead text-uppercase mb-1">Hello!</p>
+            <h1 class="intro-title marker">I’m {{ports.first_name}} {{ports.last_name}}</h1>
+            <p class="lead fw-normal mt-3">{{ports.email}} || {{ports.phone}}</p>
+            <div class="social-nav">
+              <nav role="navigation">
+                {% if ports.links %}
+                  {{ports.links|safe}}
+                {% endif %}
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="section pt-4 px-3 px-lg-4" id="about">
+  <div class="container-narrow">
+    <div class="row bg-light">
+      <div class="col-md-6">
+        <h2 class="h4 my-2">About Me</h2>
+        <p>{{ports.about|safe}}</p>
+        <div class="row mt-3">
+          <div class="">
+            <h2 class="h4 my-2">Bio</h2>
+            <div class="pb-1">{{ports.Basic_information|safe}}</div>
+          </div>
+        </div>
+      </div>
+      {% if ports.profile_image %}
+        <div class="col-md-5 offset-md-1"><img class="avatar img-fluid mt-2" src="{{ports.profile_image.url}}" width="400" height="400" alt="Walter Patterson"/></div>
+        {% endif %}
+    </div>
+  </div>
+</div>
+<div class="section pt-4 px-3 px-lg-4" id="about">
+  <div class="container-narrow">
+    <div class="row bg-light">
+      {% if ports.education %}
+        <div class="col-md-6">
+          <h2 class="h4 my-2">Education</h2>
+          <p>{{ports.education|safe}}</p>
+        </div>
+      {% endif %}
+      {% if ports.skills %}
+        <div class="col-md-5 offset-md-1">
+          <h2 class="h4 my-2">Skills</h2>
+          {{ports.skills|safe}}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+<div class="section pt-4 px-3 px-lg-4 mb-5" id="about">
+  <div class="container-narrow">
+    <div class="row bg-light">
+      {% if ports.certificate_and_work_experience%}
+        <div class="col-md-6">
+          <h2 class="h4 my-2">Certificate/Work Experience</h2>
+          <p>{{ports.certificate_and_work_experience|safe}}</p>
+        </div>
+      {% endif %}
+      {% if ports.reference %}
+        <div class="col-md-5 offset-md-1">
+          <h2 class="h4 my-2">Reference</h2>
+          {{ports.reference|safe}}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+<footer class="pt-4 pb-4 text-center bg-light">
+  <div class="container">
+    <div class="text-small text-secondary">
+      <div class="mb-1">&copy; Super Folio. All rights reserved.</div>
+      <div>
+        <!-- Make sure to buy a license for the template before removing the line below. Buy license on https://templateflip.com/ -->Design - <a href="https://templateflip.com/" target="_blank">TemplateFlip</a></div>
+    </div>
+  </div>
+</footer>
+</div>
+</div>
+  </body>
+</html>
