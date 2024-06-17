@@ -185,7 +185,7 @@ def generate_PDF(request):
     #response = HttpResponse(pdf, content_type='application/pdf') 
     #response['Content-Disposition'] = 'attachment; filename="mokdum-rashid.pdf"'
     
-    webbrowser.open_new(r'file://D:\\PGDIT\\resume_builder-main\\mokdum_rashid.pdf')
+    webbrowser.open_new(r'file://D:\\PGDIT\\resume-builder\\mokdum_rashid.pdf')
 
     return HttpResponse("Generate Successfully")
 

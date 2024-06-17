@@ -194,10 +194,6 @@ footer a:not(.nav-link) {
   cursor: pointer;
 }
 
-
-  .img-fluid{
-    width: 20% !important;
-  }
 /* Scroll Top */
 #scrolltop {
   display: block;
